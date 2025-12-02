@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public float ForceBounce;
+    public float ForceBounce = 5f;
+    
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
-        {
             collision.rigidbody.AddForce(transform.up * ForceBounce, ForceMode.Impulse);
-        }
     }
 }
